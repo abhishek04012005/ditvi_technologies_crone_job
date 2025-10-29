@@ -1,9 +1,9 @@
-name: Supabase Insert Every Minute
+name: Supabase Insert Every 12 Hours
 
 on:
   schedule:
-    - cron: "* * * * *"  # Every minute
-  workflow_dispatch:      # Allows manual trigger
+    - cron: "0 0,12 * * *"  # At 00:00 and 12:00 daily
+  workflow_dispatch:        # Allows manual trigger
 
 jobs:
   insert-to-supabase:
