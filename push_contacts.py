@@ -12,8 +12,8 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 # Initialize Supabase client
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-# Sample contact data
-contact = {
+# Sample data for lifesupabase table
+entry = {
     "name": "John Doe",
     "number": "9876543210",
     "subject": "Test Entry",
@@ -21,5 +21,5 @@ contact = {
 }
 
 # Insert into Supabase
-response = supabase.table("contacts").insert(contact).execute()
+response = supabase.table("lifesupabase").insert(entry).execute()
 print("Inserted:", response.data)
